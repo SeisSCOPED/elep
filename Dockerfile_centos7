@@ -6,5 +6,5 @@ RUN  cd /home/scoped \
     && git clone --depth=1 git@github.com:congcy/ELEP.git \
     && cd ELEP \
     && git pull \
-    && pip install "." \
+    && pip install . \
     && docker-clean 
