@@ -2,6 +2,10 @@ FROM ghcr.io/seisscoped/container-base:centos7
 
 LABEL maintainer="Yiyu Ni"
 
+RUN conda config --prepend channels conda-forge \
+    && conda install obspy h5py \
+    && docker-clean
+    
 RUN  cd /home/scoped \
     && git clone --depth=1 https://github.com/congcy/ELEP.git \
     && cd ELEP \
